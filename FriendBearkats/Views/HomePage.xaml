@@ -4,8 +4,8 @@
              x:Class="FriendBearkats.Views.HomePage"
              Title="Home">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Chat"
-                     Clicked="OnChatClicked" />
+        <ToolbarItem Text="Find"
+                     Clicked="OnFindClicked" />
 
         <ToolbarItem Text="Profile"
                      Clicked="OnProfileClicked"/>

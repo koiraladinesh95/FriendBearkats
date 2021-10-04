@@ -37,7 +37,7 @@ namespace FriendBearkats.ViewModels
         }
         public async  void OnSubmit()
         {
-            if (email != "macoratti@shsu.edu" || password != "secret")
+            if (email != "rex@shsu.edu" || password != "secret")
             {
                 DisplayInvalidLoginPrompt();
             }

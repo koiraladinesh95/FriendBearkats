@@ -6,9 +6,9 @@ using Xamarin.Forms;
 namespace FriendBearkats.Views
 {
   
-    public partial class ChatPage : ContentPage
+    public partial class FindPage : ContentPage
     {
-        public ChatPage()
+        public FindPage()
         {
             InitializeComponent();
         }

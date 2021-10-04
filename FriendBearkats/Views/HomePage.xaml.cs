@@ -14,10 +14,10 @@ namespace FriendBearkats.Views
             InitializeComponent();
         }
 
-        async void OnChatClicked(object sender, EventArgs e)
+        async void OnFindClicked(object sender, EventArgs e)
         {
             // Navigate to the NoteEntryPage, without passing any data.
-            await Shell.Current.GoToAsync(nameof(ChatPage));
+            await Shell.Current.GoToAsync(nameof(FindPage));
         }
 
         async void OnProfileClicked(object sender, EventArgs e)
