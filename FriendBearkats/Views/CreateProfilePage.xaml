@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FriendBearkats.Views.CreateProfilePage"
+             Title="Create">
+    <StackLayout Margin="20,35,20,20">
+        <Entry x:Name="emailEntry"
+               Placeholder="Enter email"/>
+        <Entry x:Name="numberEntry"
+               Placeholder="Enter Number"/>
+        <Entry x:Name="nameEntry"
+               Placeholder="Enter name" />
+        <Entry x:Name="ageEntry"
+               Placeholder="Enter age" />
+        <Entry x:Name="genderEntry"
+               Placeholder="Enter Gender"/>
+        <Entry x:Name="addressEntry"
+               Placeholder="Enter Address"/>
+        <Entry x:Name="sexPrefEntry"
+               Placeholder="Enter Sexual Preference"/>
+        <Entry x:Name="hobbyEntry"
+               Placeholder="Enter Hobbies"/>
+        <Entry x:Name="majorEntry"
+               Placeholder="Enter Major"/>
+        <Entry x:Name="bioEntry"
+               Placeholder="Write something about yourself"/>
+
+
+        <Button Text="Add to Database"
+                Clicked="OnButtonClicked" />
+        <CollectionView x:Name="collectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Label Text="{Binding Name}"
+                               FontSize="Medium" />
+                        <Label Text="{Binding Age}"
+                               TextColor="Silver"
+                               FontSize="Small" />
+                        <Label Text="{Binding Email}"
+                               FontSize="Small"/>
+                        <Label Text="{Binding Gender}"
+                               FontSize="Small"/>
+                        <Label Text="{Binding Address}"
+                               FontSize="Small"/>
+                        <Label Text="{Binding SexualPreference}"
+                               FontSize="Small"/>
+                        <Label Text="{Binding Number}"
+                               FontSize="Small"/>
+                        <Label Text="{Binding Major}"
+                               FontSize="Small"/>
+                        <Label Text="{Binding Bio}"
+                               FontSize="Small"/>
+                        <Label Text="{Binding Hobbies}"
+                               FontSize="Small"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        
+    </StackLayout>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Profile"
+                     Clicked="OnProfileClicked" />
+    </ContentPage.ToolbarItems>
+</ContentPage>

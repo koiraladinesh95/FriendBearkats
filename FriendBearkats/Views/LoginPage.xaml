@@ -23,6 +23,9 @@
             <Button Command="{Binding SubmitCommand}" Text="Login" TextColor="White"  
                     FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
                     BackgroundColor="#088da5" />
+            <Button Command="{Binding SignupCommand}" Text="Signup" TextColor="White"
+                    FontAttributes="Bold" FontSize="Small" HorizontalOptions="Center"
+                    BackgroundColor="RoyalBlue"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
