@@ -2,7 +2,9 @@
 using System.ComponentModel;
 using System.Windows.Input;
 using Xamarin.Forms;
+using SQLite;
 using FriendBearkats.Views;
+
 
 namespace FriendBearkats.ViewModels
 {
@@ -31,9 +33,16 @@ namespace FriendBearkats.ViewModels
             }
         }
         public ICommand SubmitCommand { protected set; get; }
+        public ICommand SignupCommand { protected set; get; }
         public LoginPageViewModel()
         {
             SubmitCommand = new Command(OnSubmit);
+            SignupCommand = new Command(OnSignup);
+        }
+
+        public async void OnSignup()
+        {
+            await Shell.Current.GoToAsync(nameof(CreateProfilePage));
         }
         public async  void OnSubmit()
         {
