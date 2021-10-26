@@ -4,22 +4,28 @@
              x:Class="FriendBearkats.Views.ProfilePage"
              Title="Profile">
 
-    
-    <Grid RowDefinitions="Auto,*">
-        
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <CollectionView x:Name="myCollectionView">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Label Text="{Binding Name}"
+                               FontSize="Medium" />
+                                <Label Text="{Binding Age}"
+                               TextColor="Silver"
+                               FontSize="Small" />
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
 
-        <!-- Layout children vertically -->
-        <StackLayout Grid.Row="1"
-                     Margin="20"
-                     Spacing="20">
-            
-            <Label Text="App written by our group from SHSU" />
-            <Button Text="Learn more"
-                    Clicked="OnButtonClicked" />
+            </StackLayout>
         </StackLayout>
-        
-        
-    </Grid>
+    </ContentPage.Content>
+
+    <!--
     <ContentPage.ToolbarItems>
         
 
@@ -27,5 +33,6 @@
                      Clicked="OnHomeClicked"/>
         
     </ContentPage.ToolbarItems>
+    -->
 
 </ContentPage>

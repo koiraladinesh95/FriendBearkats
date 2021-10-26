@@ -21,6 +21,8 @@ namespace FriendBearkats
             return _database.Table<Person>().ToListAsync();
         }
 
+        
+        
         public Task<int> SavePersonAsync(Person person)
         {
             return _database.InsertAsync(person);

@@ -12,6 +12,9 @@
                Placeholder="Enter name" />
         <Entry x:Name="ageEntry"
                Placeholder="Enter age" />
+        
+        <DatePicker x:Name="dobEntry"></DatePicker>
+        
         <Entry x:Name="genderEntry"
                Placeholder="Enter Gender"/>
         <Entry x:Name="addressEntry"
@@ -37,6 +40,9 @@
                         <Label Text="{Binding Age}"
                                TextColor="Silver"
                                FontSize="Small" />
+                        <Label Text="{Binding Dob}"
+                               TextColor="Silver"
+                               FontSize="Small"/>
                         <Label Text="{Binding Email}"
                                FontSize="Small"/>
                         <Label Text="{Binding Gender}"
