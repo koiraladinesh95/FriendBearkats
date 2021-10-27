@@ -8,12 +8,25 @@ namespace FriendBearkats.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
+        public static string em;
+        public static string getEm()
+        {
+            return em;
+        }
+
         public LoginPage()
         {
             var vm = new LoginPageViewModel();
+            string currentEmail = vm.getEmail();
+            em = currentEmail;
             this.BindingContext = vm;
             vm.DisplayInvalidLoginPrompt += () => DisplayAlert("Error", "Invalid Login, try again", "OK");
             InitializeComponent();
+
+            string getEmail()
+            {
+                return currentEmail;
+            }
 
             Email.Completed += (object sender, EventArgs e) =>
             {
@@ -24,6 +37,10 @@ namespace FriendBearkats.Views
             {
                 vm.SubmitCommand.Execute(null);
             };
+
+            
         }
+
+
     }
 }
