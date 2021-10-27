@@ -13,9 +13,13 @@ namespace FriendBearkats.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CreateProfilePage : ContentPage
     {
+
+        public Action DisplayInvalidLoginPrompt;
+
         public CreateProfilePage()
         {
             InitializeComponent();
+            DisplayInvalidLoginPrompt =() => DisplayAlert("Error", "Invalid Login, try again", "OK");
         }
 
         
@@ -58,6 +62,13 @@ namespace FriendBearkats.Views
                     hobbyEntry.Text*/ = string.Empty;
 
                 await Shell.Current.GoToAsync(nameof(LoginPage));
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(nameEntry.Text))
+                {
+
+                }    
             }
         }
      
