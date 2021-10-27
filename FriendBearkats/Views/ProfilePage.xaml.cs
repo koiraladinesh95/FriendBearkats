@@ -42,8 +42,9 @@ namespace FriendBearkats.Views
             base.OnAppearing();
             //myCollectionView.ItemsSource = await App.Database.GetPeopleAsync();
             var details = await App.Database.GetPeopleAsync();
-            //var a1 = from x in details where x.Email == LoginPage.getEm() select x;
-            myCollectionView.ItemsSource = details;
+            var a1 = from x in details where x.Email == LoginPage.getEm() select x;
+            //myCollectionView.ItemsSource = details;
+            myCollectionView.ItemsSource = a1;
         }
     }
 }

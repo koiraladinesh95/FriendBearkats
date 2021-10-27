@@ -54,11 +54,12 @@ namespace FriendBearkats.ViewModels
         public async  void OnSubmit()
         {
             var details = await App.Database.GetPeopleAsync();
-            var a1 = from x in details where x.Email == email && x.Password == password select x;
             
-         
+            var a1 = from x in details where x.Email == email && x.Password == password select x;
+            var n = a1.ToArray();
+            
             //if (email != "rex@shsu.edu" || password != "secret")
-            if(a1 == null)
+            if(n.Length == 0)
             {
                 DisplayInvalidLoginPrompt();
             }
