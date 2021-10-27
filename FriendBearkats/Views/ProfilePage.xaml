@@ -13,7 +13,7 @@
                             <StackLayout>
                                 <Label Text="{Binding Name}"
                                FontSize="Medium" />
-                                <Label Text="{Binding Age}"
+                                <Label Text="{Binding Email}"
                                TextColor="Silver"
                                FontSize="Small" />
                             </StackLayout>

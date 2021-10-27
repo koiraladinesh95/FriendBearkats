@@ -10,6 +10,7 @@ namespace FriendBearkats
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         public string Email { get; set; }
+        public string Password { get; set; }
         public string Number { get; set; }
         public string Name { get; set; }
         public int Age { get; set; }
@@ -21,5 +22,9 @@ namespace FriendBearkats
         public string Bio { get; set; }
         public string Hobbies { get; set; }
 
+        public string getEmail ()
+        {
+            return Email;
+        }
     }
 }

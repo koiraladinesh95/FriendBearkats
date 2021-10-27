@@ -6,12 +6,12 @@
     <StackLayout Margin="20,35,20,20">
         <Entry x:Name="emailEntry"
                Placeholder="Enter email"/>
+        <Entry x:Name="passwordEntry" Placeholder="Password" IsPassword="True"></Entry>
         <Entry x:Name="numberEntry"
                Placeholder="Enter Number"/>
         <Entry x:Name="nameEntry"
                Placeholder="Enter name" />
-        <Entry x:Name="ageEntry"
-               Placeholder="Enter age" />
+        
         
         <DatePicker x:Name="dobEntry"></DatePicker>
         
@@ -21,12 +21,14 @@
                Placeholder="Enter Address"/>
         <Entry x:Name="sexPrefEntry"
                Placeholder="Enter Sexual Preference"/>
+        <!--
         <Entry x:Name="hobbyEntry"
                Placeholder="Enter Hobbies"/>
         <Entry x:Name="majorEntry"
                Placeholder="Enter Major"/>
         <Entry x:Name="bioEntry"
                Placeholder="Write something about yourself"/>
+        -->
 
 
         <Button Text="Add to Database"
@@ -66,8 +68,5 @@
 
         
     </StackLayout>
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Profile"
-                     Clicked="OnProfileClicked" />
-    </ContentPage.ToolbarItems>
+    
 </ContentPage>

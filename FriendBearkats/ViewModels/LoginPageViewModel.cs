@@ -1,9 +1,11 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Input;
+using System.Linq;
 using Xamarin.Forms;
 using SQLite;
 using FriendBearkats.Views;
+using FriendBearkats;
 
 
 namespace FriendBearkats.ViewModels
@@ -21,6 +23,11 @@ namespace FriendBearkats.ViewModels
                 email = value;
                 PropertyChanged(this, new PropertyChangedEventArgs("Email"));
             }
+        }
+
+        public string getEmail()
+        {
+            return email;
         }
         private string password;
         public string Password
@@ -46,7 +53,12 @@ namespace FriendBearkats.ViewModels
         }
         public async  void OnSubmit()
         {
-            if (email != "rex@shsu.edu" || password != "secret")
+            var details = await App.Database.GetPeopleAsync();
+            var a1 = from x in details where x.Email == email && x.Password == password select x;
+            
+         
+            //if (email != "rex@shsu.edu" || password != "secret")
+            if(a1 == null)
             {
                 DisplayInvalidLoginPrompt();
             }
