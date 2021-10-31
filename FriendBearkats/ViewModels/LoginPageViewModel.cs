@@ -66,7 +66,8 @@ namespace FriendBearkats.ViewModels
             else
             {
                 //new AppShell();
-                await Shell.Current.GoToAsync(nameof(HomePage));
+                //await Shell.Current.GoToAsync(nameof(ProfilePage));
+                await Shell.Current.GoToAsync(nameof(ProfilePage));
                 //new AppShell();
             }
         }

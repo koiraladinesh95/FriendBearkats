@@ -14,12 +14,12 @@ namespace FriendBearkats.Views
    
     public partial class ProfilePage : ContentPage
     {
-        
+       
 
         public ProfilePage()
         {
             InitializeComponent();
-
+            NavigationPage.SetHasBackButton(this, false);
 
 
         }
@@ -32,9 +32,14 @@ namespace FriendBearkats.Views
             await Launcher.OpenAsync("https://www.instagram.com/rexbeeblebrox/");
         }
 
-        async void OnHomeClicked(object sender, EventArgs e)
+        async void OnFindClicked(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync(nameof(HomePage));
+            await Shell.Current.GoToAsync(nameof(FindPage));
+        }
+
+        async void OnLogoutClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync(nameof(LoginPage));
         }
 
         protected override async void OnAppearing()
@@ -42,9 +47,9 @@ namespace FriendBearkats.Views
             base.OnAppearing();
             //myCollectionView.ItemsSource = await App.Database.GetPeopleAsync();
             var details = await App.Database.GetPeopleAsync();
-            var a1 = from x in details where x.Email == LoginPage.getEm() select x;
+            //var a1 = from x in details where x.Email == LoginPage.getEm() select x;
             //myCollectionView.ItemsSource = details;
-            myCollectionView.ItemsSource = a1;
+            //myCollectionView.ItemsSource = a1;
         }
     }
 }

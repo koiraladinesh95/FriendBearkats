@@ -22,9 +22,7 @@
                       Icon="icon_login.png"
                       ContentTemplate="{DataTemplate views:LoginPage}" />
         -->
-        <ShellContent Title="Login"
-                      Icon="icon_login.png"
-                      ContentTemplate ="{DataTemplate views:LoginPage}" />
+        
     </TabBar>
 
 </Shell>
