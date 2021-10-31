@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using SQLite; 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using FriendBearkats.ViewModels;
 
 namespace FriendBearkats.Views
 {
@@ -14,63 +9,52 @@ namespace FriendBearkats.Views
     public partial class CreateProfilePage : ContentPage
     {
 
-        public Action DisplayInvalidLoginPrompt;
+        
 
         public CreateProfilePage()
         {
+            NavigationPage.SetHasBackButton(this, false);
+            var vm = new CreatePageViewModel();
+            this.BindingContext = vm;
+            vm.DisplayInvalidLoginPrompt += () => DisplayAlert("Error", "Invalid Login, try again", "OK");
+            vm.DisplayInvalidNamePrompt += () => DisplayAlert("Error", "Name not Entered, try again", "OK");
+            vm.DisplayInvalidEmailPrompt += () => DisplayAlert("Error", "Email not Valid, use @shsu.edu email address", "OK");
+            vm.DisplayInvalidPasswordPrompt += () => DisplayAlert("Error", "Password must be atleast 8 character, have atleast one number, one Uppercase and one lowercase", "OK");
+            vm.DisplayInvalidGenderPrompt += () => DisplayAlert("Error", "Please enter gender", "OK");
+            vm.DisplayInvalidAddressPrompt += () => DisplayAlert("Error", "Please enter Address", "OK");
+            vm.DisplayInvalidNumberPrompt += () => DisplayAlert("Error", "Number should be 10 strings long", "OK");
+            
             InitializeComponent();
-            DisplayInvalidLoginPrompt =() => DisplayAlert("Error", "Invalid Login, try again", "OK");
-        }
-
-        
-
-        async void OnButtonClicked(object sender, EventArgs e)
-        {
-            if (
-                !string.IsNullOrWhiteSpace(nameEntry.Text) && 
-                !string.IsNullOrWhiteSpace(passwordEntry.Text) &&
-                !string.IsNullOrWhiteSpace(emailEntry.Text) &&
-                !string.IsNullOrWhiteSpace(genderEntry.Text) &&
-                !string.IsNullOrWhiteSpace(addressEntry.Text) &&
-                !string.IsNullOrWhiteSpace(sexPrefEntry.Text) &&
-                !string.IsNullOrWhiteSpace(numberEntry.Text)
-
-                /*!string.IsNullOrWhiteSpace(majorEntry.Text) &&
-                !string.IsNullOrWhiteSpace(bioEntry.Text) &&
-                !string.IsNullOrWhiteSpace(hobbyEntry.Text)*/
-                )
+            
+            /*
+            EmailEntry.Completed += (object sender, EventArgs e) =>
             {
-                await App.Database.SavePersonAsync(new Person
-                {
-                    Name = nameEntry.Text,
-                   
-                    Dob = dobEntry.Date.ToString(),
-                    Email = emailEntry.Text,
-                    Password = passwordEntry.Text,
-                    Gender = genderEntry.Text,
-                    Address = addressEntry.Text,
-                    SexualPreference = sexPrefEntry.Text,
-                    Number = numberEntry.Text,
-                    
-                    //Major = majorEntry.Text, 
-                    //Bio = bioEntry.Text, 
-                    //Hobbies = hobbyEntry.Text
-                });
 
-                nameEntry.Text = passwordEntry.Text = emailEntry.Text = genderEntry.Text = addressEntry.Text =
-                    sexPrefEntry.Text = numberEntry.Text  /*= majorEntry.Text = bioEntry.Text =
-                    hobbyEntry.Text*/ = string.Empty;
+                PasswordEntry.Focus();
+            };
 
-                await Shell.Current.GoToAsync(nameof(LoginPage));
-            }
-            else
+            PasswordEntry.Completed += (object sender, EventArgs e) =>
             {
-                if (string.IsNullOrEmpty(nameEntry.Text))
-                {
+                NumberEntry.Focus();
+                //vm.SubmitCommand.Execute(null);
+            };
 
-                }    
-            }
+            NumberEntry.Completed += (object sender, EventArgs e) =>
+            {
+                NameEntry.Focus();
+            };
+
+            NameEntry.Completed += (object sender, EventArgs e) =>
+            {
+                AddressEntry.Focus();
+            };
+
+            AddressEntry.Completed += (object sender, EventArgs e) =>
+            {
+                //vm.SubmitCommand.Execute(null);
+                vm.CreateCommand.Execute(null);
+            };
+            */
         }
-     
     }
 }

@@ -3,15 +3,15 @@ using Xamarin.Forms;
 
 namespace FriendBearkats
 {
-    public partial class AppShell : Shell
+    public partial class NewAppShell : Shell
     {
-        public AppShell()
+        public NewAppShell()
         {
             InitializeComponent();
             Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
-           
+
             Routing.RegisterRoute(nameof(ProfilePage), typeof(ProfilePage));
-            Routing.RegisterRoute(nameof(CreateProfilePage), typeof(CreateProfilePage));
+            
             Routing.RegisterRoute(nameof(FindPage), typeof(FindPage));
 
         }

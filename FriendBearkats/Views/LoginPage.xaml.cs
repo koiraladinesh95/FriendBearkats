@@ -8,16 +8,11 @@ namespace FriendBearkats.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
-        public static string em;
-        public static string getEm()
-        {
-           
-            return em;
-            
-        }
+        
 
         public LoginPage()
         {
+            NavigationPage.SetHasBackButton(this, false);
             var vm = new LoginPageViewModel();
             
             this.BindingContext = vm;
@@ -35,8 +30,7 @@ namespace FriendBearkats.Views
                 vm.SubmitCommand.Execute(null);
             };
 
-            string currentEmail = vm.getEmail();
-            em = currentEmail;
+           
 
 
         }

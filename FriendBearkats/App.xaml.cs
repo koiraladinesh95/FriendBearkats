@@ -25,6 +25,7 @@ namespace FriendBearkats
             InitializeComponent();
             //MainPage = new FriendBearkats.Views.LoginPage();
             MainPage = new AppShell();
+           
         }
 
         protected override void OnStart()

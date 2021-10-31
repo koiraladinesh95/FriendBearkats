@@ -25,14 +25,16 @@
         </StackLayout>
     </ContentPage.Content>
 
-    <!--
+    
     <ContentPage.ToolbarItems>
         
 
-        <ToolbarItem Text="Home"
-                     Clicked="OnHomeClicked"/>
-        
+        <ToolbarItem Text="Find"
+                     Clicked="OnFindClicked"/>
+        <ToolbarItem Text="Logout"
+                     Clicked="OnLogoutClicked"/>
+
     </ContentPage.ToolbarItems>
-    -->
+    
 
 </ContentPage>
