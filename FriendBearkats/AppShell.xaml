@@ -18,10 +18,11 @@
         <ShellContent Title="Profile"
                       Icon="icon_about.png"
                       ContentTemplate="{DataTemplate views:ProfilePage}" />
+-->
         <ShellContent Title="Login"
                       Icon="icon_login.png"
                       ContentTemplate="{DataTemplate views:LoginPage}" />
-        -->
+        
         
     </TabBar>
 
